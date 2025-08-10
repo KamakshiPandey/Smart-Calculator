@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Calculator</title>
@@ -52,5 +53,128 @@
         </div>
     </div>
     <script src="script.js"></script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Smart Calculator</h1>
+    </header>
+
+    <main>
+      <section class="calculator">
+        <input id="display" type="text" placeholder="Enter expression or use buttons" readonly />
+
+        <div class="row">
+          <button onclick="clearDisplay()">C</button>
+          <button onclick="backspace()">⌫</button>
+          <button onclick="toggleSign()">±</button>
+          <button onclick="appendValue('/')">÷</button>
+        </div>
+
+        <div class="row">
+          <button onclick="appendValue('7')">7</button>
+          <button onclick="appendValue('8')">8</button>
+          <button onclick="appendValue('9')">9</button>
+          <button onclick="appendValue('*')">×</button>
+        </div>
+
+        <div class="row">
+          <button onclick="appendValue('4')">4</button>
+          <button onclick="appendValue('5')">5</button>
+          <button onclick="appendValue('6')">6</button>
+          <button onclick="appendValue('-')">−</button>
+        </div>
+
+        <div class="row">
+          <button onclick="appendValue('1')">1</button>
+          <button onclick="appendValue('2')">2</button>
+          <button onclick="appendValue('3')">3</button>
+          <button onclick="appendValue('+')">+</button>
+        </div>
+
+        <div class="row">
+          <button onclick="appendValue('0')">0</button>
+          <button onclick="appendValue('.')">.</button>
+          <button onclick="evaluateExpression()">=</button>
+          <button onclick="appendValue('**')">^</button>
+        </div>
+
+        <div class="row small">
+          <button onclick="appendValue('Math.sqrt(')">√</button>
+          <button onclick="appendValue('Math.log10(')">log</button>
+          <button onclick="appendValue('Math.log(')">ln</button>
+          <button onclick="appendValue('Math.PI')">π</button>
+        </div>
+
+        <div class="row small">
+          <button onclick="appendValue('Math.sin(')">sin</button>
+          <button onclick="appendValue('Math.cos(')">cos</button>
+          <button onclick="appendValue('Math.tan(')">tan</button>
+          <button onclick="appendValue('Math.abs(')">abs</button>
+        </div>
+
+        <div class="memory">
+          <button onclick="memoryClear()">MC</button>
+          <button onclick="memoryRecall()">MR</button>
+          <button onclick="memoryAdd()">M+</button>
+          <button onclick="memorySub()">M-</button>
+          <span class="mem-label" id="memLabel">M=0</span>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <details open>
+          <summary>Unit Conversion</summary>
+          <div class="conv">
+            <label>Type:
+              <select id="unitType" onchange="populateUnits()">
+                <option value="length">Length</option>
+                <option value="weight">Weight</option>
+                <option value="temperature">Temperature</option>
+                <option value="volume">Volume</option>
+                <option value="time">Time</option>
+              </select>
+            </label>
+
+            <div class="conv-rows">
+              <input id="unitInput" type="number" placeholder="value" />
+              <select id="fromUnit"></select>
+              <span>→</span>
+              <select id="toUnit"></select>
+              <button onclick="convertUnit()">Convert</button>
+            </div>
+
+            <div id="convResult" class="result"></div>
+          </div>
+        </details>
+
+        <details>
+          <summary>History</summary>
+          <div id="history" class="history"></div>
+          <button onclick="clearHistory()" class="small-btn">Clear History</button>
+        </details>
+
+        <details>
+          <summary>Settings</summary>
+          <div class="settings">
+            <button onclick="toggleTheme()">Toggle Dark/Light</button>
+            <button onclick="exportHistory()">Export History</button>
+          </div>
+        </details>
+      </aside>
+    </main>
+
+    <footer>
+      <small>Smart Calculator • Basic + Scientific + Conversions • Local history</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+
 </body>
 </html>
