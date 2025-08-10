@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--bg-color, #f4f4f4);
+    color: var(--text-color, #000);
+    transition: all 0.3s ease;
+}
+
+.calculator {
+    background: var(--calc-bg, #fff);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+.buttons, .extra, .controls {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: var(--btn-bg, #ddd);
+    color: var(--btn-text, #000);
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: var(--btn-hover, #bbb);
+}
+
+/* Dark mode variables */
+.dark {
+    --bg-color: #121212;
+    --text-color: #fff;
+    --calc-bg: #1e1e1e;
+    --btn-bg: #333;
+    --btn-text: #fff;
+    --btn-hover: #555;
+}

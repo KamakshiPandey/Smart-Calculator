@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>🧠 Smart Calculator</h1>
+        <input type="text" id="display" placeholder="Enter calculation or speak..." readonly>
+        
+        <div class="buttons">
+            <button onclick="appendValue('7')">7</button>
+            <button onclick="appendValue('8')">8</button>
+            <button onclick="appendValue('9')">9</button>
+            <button onclick="appendValue('/')">÷</button>
+            
+            <button onclick="appendValue('4')">4</button>
+            <button onclick="appendValue('5')">5</button>
+            <button onclick="appendValue('6')">6</button>
+            <button onclick="appendValue('*')">×</button>
+            
+            <button onclick="appendValue('1')">1</button>
+            <button onclick="appendValue('2')">2</button>
+            <button onclick="appendValue('3')">3</button>
+            <button onclick="appendValue('-')">−</button>
+            
+            <button onclick="appendValue('0')">0</button>
+            <button onclick="appendValue('.')">.</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="appendValue('+')">+</button>
+            
+            <button onclick="appendValue('Math.sqrt(')">√</button>
+            <button onclick="appendValue('**')">^</button>
+            <button onclick="appendValue('Math.sin(')">sin</button>
+            <button onclick="appendValue('Math.cos(')">cos</button>
+        </div>
+
+        <div class="extra">
+            <button onclick="convertUnit('cmToInch')">cm → inch</button>
+            <button onclick="convertUnit('inchToCm')">inch → cm</button>
+            <button onclick="convertUnit('kgToLb')">kg → lb</button>
+            <button onclick="convertUnit('lbToKg')">lb → kg</button>
+        </div>
+
+        <div class="controls">
+            <button onclick="startListening()">🎤 Voice Input</button>
+            <button onclick="toggleTheme()">🌓 Theme</button>
+            <button onclick="clearDisplay()">Clear</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
